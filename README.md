@@ -56,3 +56,7 @@ config.nnlayers = {
   }
 }
 ```
+
+# Credits
+
+Based on NNv2 strategy located at `https://github.com/zschro/gekko-neuralnet`
