@@ -2,6 +2,30 @@
 
 Install the modules in your gekko folder: `npm install convnetjs mathjs`
 
+I find it best to run this strategy via CLI.
+
+Below configuration is tailored towards USD/BTC 10m candles on GDAX (no fees since GDAX charges 0 for maker which gekko does).
+
+pFast/pSlow is the average of the previous # of predictions. This was just a trial to see if the average would make a difference in following the prediction movement.  They can be kept at 1 as I could not find a better result.
+
+NN information can be found here: `https://cs.stanford.edu/people/karpathy/convnetjs/docs.html`
+
+You can change the number of activation layers, the type of activation layer, batch size, neurons, etc., for the NN parameters.
+
+I run gekko on an AWS EC2 instance, hence the file_name parameter.
+
+If shouldLoad is true, it will try to load the saved trainer from the file_name.  The trainer is saved at the file_name parameter after every run.
+
+If you want to use MACD or RSI to figure out BULL/BEAR, just change enabled to true on one of them and it will use that to figure out the market instead of SMA.  It turned out that bull/bear didn't matter too much with this so I kept the buy/sell thresholds the same.
+
+I added a take profit indicator, meaning that if you are long and you hit the percent, it will keep it open until it loses the loss_percent parameter from the max price during the buy after it hits.
+
+The profit will change for every run, as there are neurons and layers in the neural network and predictions will change.
+
+I have been backtesting this from 2018-01-01 to current date (as of today 2018-12-05) over the course of development.  It seems to get a profit between 40-80% with a market change of -71%. (NOV/DEC have not been kind).
+
+I have not tried this live yet.  Once I get more comfortable with the strategy and backtesting, I will try out live soon.
+
 # Configuration
 
 ```javascript
