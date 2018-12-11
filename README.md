@@ -2,6 +2,8 @@
 
 Install the modules in your gekko folder: `npm install convnetjs mathjs`
 
+Copy everything from the strategies folder into your own strategies folder.
+
 I find it best to run this strategy via CLI.
 
 Below configuration is tailored towards USD/BTC 10m candles on GDAX (no fees since GDAX charges 0 for maker which gekko does).
