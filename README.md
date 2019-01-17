@@ -24,7 +24,7 @@ I added a take profit indicator, meaning that if you are long and you hit the pe
 
 The profit will change for every run, as there are neurons and layers in the neural network and predictions will change.
 
-I have been backtesting this from 2018-01-01 to current date (as of today 2018-12-05) over the course of development.  It seems to get a profit between 40-80% with a market change of -71%. (NOV/DEC have not been kind).
+I have been backtesting this from 2018-01-01 to 2019-01-01 over the course of development.  It seems to get a profit between 30-40% with a market change of -73.37%..
 
 I have not tried this live yet.  Once I get more comfortable with the strategy and backtesting, I will try out live soon.
 
@@ -32,8 +32,8 @@ I have not tried this live yet.  Once I get more comfortable with the strategy a
 
 ```javascript
 config.nnlayers = {
-  threshold_buy_bear: 0.38,
-  threshold_buy_bull: 0.38,
+  threshold_buy_bear: 1.38,
+  threshold_buy_bull: 1.38,
   threshold_sell_bear: -1.11,
   threshold_sell_bull: -1.11,
   NN_SMMA_Length: 4,
@@ -48,14 +48,14 @@ config.nnlayers = {
   decay: 0.001,
   momentum: 0.7,
   price_buffer_len: 80,
-  method: 'sgd',
+  method: 'adagrad',
   learningrate: 0.01,
   batchsize: 10,
   neurons: 30,
   file_name: '/home/ubuntu/gekko/testjsonfile.txt',
-  stoploss_threshold: 1.5,
+  stoploss_threshold: 2,
   stoplossWait: 120,
-  waitTime: 1800,
+  waitTime: 90,
   takeProfit: {
     profit_percent: 2,
     profit_loss_percent: 0.25
