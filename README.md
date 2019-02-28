@@ -35,7 +35,7 @@ I have also tried out this strategy on the pair BNB/ETH via Binance (had to add 
 ```javascript
 config.nnlayers = {
   threshold_buy_bear: 1.38,
-  threshold_buy_bull: 1.38,
+  threshold_buy_bull: 2.38,
   threshold_sell_bear: -3.11,
   threshold_sell_bull: -3.11,
   NN_SMMA_Length: 4,
