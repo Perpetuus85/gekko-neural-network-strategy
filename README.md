@@ -24,7 +24,9 @@ I added a take profit indicator, meaning that if you are long and you hit the pe
 
 The profit will change for every run, as there are neurons and layers in the neural network and predictions will change.
 
-I have been backtesting this from 2018-01-01 to 2019-01-01 over the course of development.  It seems to get a profit  around 50-60% with a market change of -73.37%.
+I have been backtesting this from 2018-01-01 to 2019-01-01 over the course of development.  It seems to get a profit around 30-40% with a market change of -73.37%.
+
+I have been backtesting this also from 2018-01-01 to 2019-02-27 and it gets close to 60% profit.
 
 I have not tried this live yet.  Once I get more comfortable with the strategy and backtesting, I will try out live soon.
 
