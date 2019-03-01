@@ -18,15 +18,15 @@ I run gekko on an AWS EC2 instance, hence the file_name parameter.
 
 If shouldLoad is true, it will try to load the saved trainer from the file_name.  The trainer is saved at the file_name parameter after every run.
 
-If you want to use MACD or RSI to figure out BULL/BEAR, just change enabled to true on one of them and it will use that to figure out the market instead of SMA.  It turned out that bull/bear didn't matter too much with this so I kept the buy/sell thresholds the same.
+If you want to use MACD or RSI to figure out BULL/BEAR, just change enabled to true on one of them and it will use that to figure out the market instead of SMA.
 
-I added a take profit indicator, meaning that if you are long and you hit the percent, it will keep it open until it loses the loss_percent parameter from the max price during the buy after it hits.  After more testing, the take profit didn't perform well, so I changed the value to 100 so it wouldn't activate.
+I added a take profit indicator, meaning that if you are long and you hit the percent, it will keep it open until it loses the loss_percent parameter from the max price during the buy after it hits.  After more testing, the take profit didn't perform well, so I changed the value to 100 so it wouldn't activate.  It works better when the thresholds are lower (like 0.38 for buy and -1.11 for sell).
 
 The profit will change for every run, as there are neurons and layers in the neural network and predictions will change.
 
-I have been backtesting this from 2018-01-01 to 2019-01-01 over the course of development.  It seems to get a profit around 30-40% with a market change of -73.37%.
+I have been backtesting this from 2018-01-01 to 2019-01-01 over the course of development.  It seems to get a profit around 60% with a market change of -73.37%.
 
-I have been backtesting this also from 2018-01-01 to 2019-02-27 and it gets close to 60% profit.
+I have been backtesting this also from 2018-01-01 to 2019-02-28 and it can get close to 90% profit.
 
 I have not tried this live yet.  Once I get more comfortable with the strategy and backtesting, I will try out live soon.
 
@@ -37,9 +37,9 @@ I have also tried out this strategy on the pair BNB/ETH via Binance (had to add 
 ```javascript
 config.nnlayers = {
   threshold_buy_bear: 1.38,
-  threshold_buy_bull: 2.38,
+  threshold_buy_bull: 3.38,
   threshold_sell_bear: -3.11,
-  threshold_sell_bull: -3.11,
+  threshold_sell_bull: -5.11,
   NN_SMMA_Length: 4,
   maFast: 50,
   maSlow: 250,
